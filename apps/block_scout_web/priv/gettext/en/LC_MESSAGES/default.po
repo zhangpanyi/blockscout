@@ -558,12 +558,12 @@ msgstr ""
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:148
 msgid "ERC-20 "
-msgstr ""
+msgstr "SRC-20 "
 
 #, elixir-format
 #: lib/block_scout_web/views/transaction_view.ex:149
 msgid "ERC-721 "
-msgstr ""
+msgstr "SRC-721 "
 
 #, elixir-format
 #: lib/block_scout_web/templates/smart_contract/_functions.html.eex:85
