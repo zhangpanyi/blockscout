@@ -1,4 +1,13 @@
 <footer class="footer">
   <div class="footer-body container">
+    <div class="row">
+      <div class="col-xs-12 col-lg-3">
+        <div class="footer-social-icons">
+          <a href="https://github.com/SecretBlockChain" rel="noreferrer" target="_blank" class="footer-social-icon" title='<%= gettext("Github") %>'>
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </div>
   </div>
 </footer>
+
