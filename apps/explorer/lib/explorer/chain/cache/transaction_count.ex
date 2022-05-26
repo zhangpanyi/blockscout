@@ -16,6 +16,7 @@ defmodule Explorer.Chain.Cache.TransactionCount do
   require Logger
 
   alias Explorer.Chain.Transaction
+  alias Explorer.Chain.InternalTransaction
   alias Explorer.Repo
 
   defp handle_fallback(:count) do
@@ -32,9 +33,10 @@ defmodule Explorer.Chain.Cache.TransactionCount do
     {:ok, task} =
       Task.start(fn ->
         try do
-          result = Repo.aggregate(Transaction, :count, :hash, timeout: :infinity)
+          tx_count = Repo.aggregate(Transaction, :count, :hash, timeout: :infinity)
+          internal_count = Repo.aggregate(InternalTransaction, :count, timeout: :infinity)
 
-          set_count(result)
+          set_count(tx_count + internal_count)
         rescue
           e ->
             Logger.debug([
